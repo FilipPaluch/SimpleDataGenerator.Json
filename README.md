@@ -85,3 +85,5 @@ Nuget: https://www.nuget.org/packages/SimpleDataGenerator.Json/
   }
 ]
 ~~~
+
+Library can be used without entity configuration, then the data will be generated randomly.
