@@ -1,4 +1,5 @@
-# SimpleDataGenerator.Json is an open source library for .NET, expands https://github.com/FilipPaluch/SimpleDataGenerator. Library allows you to generate Json files based on a predefined model.
+# SimpleDataGenerator.Json 
+SimpleDataGenerator.Json is an open source library for .NET, expands https://github.com/FilipPaluch/SimpleDataGenerator. Library allows you to generate Json files based on a predefined model.
 
 Nuget: https://www.nuget.org/packages/SimpleDataGenerator.Json/
 
