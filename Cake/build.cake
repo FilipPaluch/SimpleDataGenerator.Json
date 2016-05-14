@@ -26,7 +26,7 @@ Task("Run-Unit-Tests")
     .Does(() =>
 {
     NUnit("../Source/SimpleDataGenerator.Json.Tests/bin/Release/SimpleDataGenerator.Json.Tests.dll", new NUnitSettings {
-        ToolPath = "../Source/packages/NUnit.ConsoleRunner.3.2.0/tools/nunit3-console.exe"
+        ToolPath = "../Source/packages/NUnit.ConsoleRunner.3.2.1/tools/nunit3-console.exe"
     });
 	
 });
@@ -41,14 +41,14 @@ Task("Create-NuGet-Package")
         Title                   = "SimpleDataGenerator.Json",
         Authors                 = new[] {"Filip Paluch"},
         Owners                  = new[] {"Filip Paluch"},
-        Description             = "Keyboard listener detecting shortcuts.",
+        Description             = "SimpleDataGenerator.Json is an open source library for .NET, expands SimpleDataGenerator.Core. Library allows you to generate Json files based on a predefined model.",
         ProjectUrl              = new Uri("https://github.com/filip-paluch/SimpleDataGenerator.Json"),
         LicenseUrl              = new Uri("https://github.com/filip-paluch/SimpleDataGenerator.Json/blob/master/LICENSE"),
         Copyright               = "Filip Paluch 2016",
         Dependencies            = new []{
             new NuSpecDependency{
-                Id              = "System.Collections.Immutable",
-                Version         = "1.1.32-beta"
+                Id              = "SimpleDataGenerator.Core",
+                Version         = "1.0.0.5"
             }
         },        
         RequireLicenseAcceptance= false,
