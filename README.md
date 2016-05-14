@@ -15,37 +15,6 @@ Nuget: https://www.nuget.org/packages/SimpleDataGenerator.Json/
     }
 ~~~
 
-### Single entity
-
-#### Generation
-~~~
-    //ARRANGE
-
-    var vehicleConf = new EntityConfiguration<Vehicle>();
-
-    vehicleConf.For(x => x.Name).WithLength(5);
-    vehicleConf.For(x => x.Kilometers).WithConstValue(100);
-    vehicleConf.For(x => x.CreatedOn).InRange(new DateTime(2015, 01, 01, 8, 0, 0), new DateTime(2016, 12, 20, 8, 0, 0));
-
-    var sut = new SimpleJsonDataGenerator();
-    sut.WithConfiguration(vehicleConf);
-
-    //ACT
-
-    var result = sut.Generate<Vehicle>();
-
-~~~
-#### Result
-~~~
-{
-  "Name": "30e76",
-  "Kilometers": 100,
-  "CreatedOn": "2016-02-12T09:23:56.6069623"
-}
-~~~
-
-### Many entities
-
 #### Generation
 ~~~
     //ARRANGE
@@ -85,5 +54,14 @@ Nuget: https://www.nuget.org/packages/SimpleDataGenerator.Json/
   }
 ]
 ~~~
+
+### Saving to file
+
+Library allows to saving result to file. Only need to extend  configuration of
+
+~~~
+sut.WithSavingToFile("FilePath");
+~~~
+
 
 Library can be used without entity configuration, then the data will be generated randomly.
