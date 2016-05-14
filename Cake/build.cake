@@ -54,7 +54,7 @@ Task("Create-NuGet-Package")
         RequireLicenseAcceptance= false,
         Symbols                 = false,
         NoPackageAnalysis       = true,
-        Files                   = new[] { new NuSpecContent {Source = "bin/Release/SimpleDataGenerator.Json.dll", Target = "lib/net452"} },
+        Files                   = new[] { new NuSpecContent {Source = "bin/Release/SimpleDataGenerator.Json.dll", Target = "lib/net45"} },
         BasePath                = "../Source/SimpleDataGenerator.Json",
         OutputDirectory         = ".."
     };
@@ -75,7 +75,7 @@ Task("Push-NuGet-Package")
 });
 
 Task("Default")
-	.IsDependentOn("Run-Unit-Tests")
+	.IsDependentOn("Push-NuGet-Package")
     .Does(() =>
 {
     Information("SimpleDataGenerator.Json building finished.");
